@@ -29,14 +29,6 @@
                                 <input type="text" name="thumb" class="form-control" placeholder="Inserisci l'url della thumb ...">
                             </div>
                             <div class="form-group width-2">
-                                <label for="">Slug</label>
-                                <input type="text" name="slug" class="form-control" placeholder="Inserisci lo slug separato da - ...">
-                            </div>
-                            <div class="form-group width-2">
-                                <label for="">Titolo</label>
-                                <input type="text" name="title" class="form-control" placeholder="Inserisci il nome del comic ...">
-                            </div>
-                            <div class="form-group width-2">
                                 <label for="">Series</label>
                                 <input type="text" name="series" class="form-control" placeholder="Inserisci la serie di appartenenza ...">
                             </div>
@@ -52,17 +44,9 @@
                                 <label for="">Prezzo</label>
                                 <input type="number" name="price" class="form-control" placeholder="Inserisci il prezzo ...">
                             </div>
-                            <div class="form-group width-2">
-                                <label for="">Artisti</label>
-                                <textarea name="artists" id="" cols="30" rows="4" class="form-control" placeholder="Inserisci la lista di artisti ..."></textarea>
-                            </div>
-                            <div class="form-group width-2">
-                                <label for="">Scrittori</label>
-                                <textarea name="writers" id="" cols="30" rows="4" class="form-control" placeholder="Inserisci la lista di scrittori ..."></textarea>
-                            </div>
                             <div class="form-group w-100">
                                 <label for="">Descrizione</label>
-                                <textarea name="description" id="" cols="30" rows="4" class="form-control" placeholder="Inserisci la descrizione ..."></textarea>
+                                <textarea name="description" id="" cols="30" rows="4" class="form-control" placeholder="Inserisci descrizione ..."></textarea>
                             </div>
                             <button class="btn btn-primary w-25" type="submit">Crea Fumetto</button>
                         </form>
