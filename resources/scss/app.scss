@@ -309,3 +309,7 @@ footer {
 .border-button {
     font-weight: bold;
 }
+
+.width-2 {
+    width: calc(100% / 2 - 1rem);
+}
