@@ -15,9 +15,9 @@
                     <a href="{{ route('homepage')}}">Home</a>               
                 </li>
                 <li>Characters</li>
-                <li class=" {{ Route::currentRouteName() == 'comics' ? 'active' : ''}} ">
+                {{-- <li class=" {{ Route::currentRouteName() == 'comics' ? 'active' : ''}} ">
                     <a href="{{ route('comics')}}">Comics</a>               
-                </li>
+                </li> --}}
                 <li>Movies</li>
                 <li>Tv</li>
                 <li>Games</li>

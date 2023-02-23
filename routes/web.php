@@ -18,12 +18,13 @@ use App\Http\Controllers\PageController as PageController;
 
 Route::get('/', [PageController::class,'index'])->name('homepage');
 
+
 // Route::get('/', function () {
 //     $comics = config('comics');
 //     return view('home', compact('comics'));
 // })->name('homepage');
 
-Route::get('/detail_comic/{slug}', [ComicController::class,'getSingle'])->name('single-comic');
+// Route::get('/detail_comic/{slug}', [ComicController::class,'getSingle'])->name('single-comic');
 
 // Route::get('/detail_comic/{id}', function ($id) {
 //     $comics = config('comics');
