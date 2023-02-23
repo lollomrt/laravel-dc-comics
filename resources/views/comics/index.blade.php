@@ -4,6 +4,7 @@
     <main class="back-dark">
         <div class="container-cards position">
             <span class="label-blue">Current series</span>
+            <a class="assoluto" href="{{ route('comics.create')}}"><button class="btn btn-light border-button text-uppercase px-5">aggiungi nuovo comic</button></a>
             <div class="row d-flex gap-5 flex-column align-items-center">
                 <div class="col d-flex flex-wrap gap-1-rem w-100">
                     @foreach($comics as $comic)

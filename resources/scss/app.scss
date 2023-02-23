@@ -142,6 +142,12 @@ header {
         top: -2rem;
         left: 0;
     }
+
+    .assoluto {
+        position: absolute;
+        top: -1rem;
+        right: 0;
+    }
 }
 
 .blue-section {
@@ -298,4 +304,8 @@ footer {
             }
         }
     }
+}
+
+.border-button {
+    font-weight: bold;
 }
