@@ -17,12 +17,28 @@
         <div class="container-fluid">
             <div class="container-cards position">
                 <div class="row d-flex gap-5 flex-column align-items-center">
-                    <div class="col d-flex flex-wrap gap-1-rem"> 
+                    <div class="col d-flex flex-wrap gap-1-rem">
+                        <div class="container-fluid p-0">    
+                            @if($errors->any())
+                            <div class="alert alert-danger w-100">
+                                <ul class="mb-0">
+                                    @foreach($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                            @endif                                 
+                        </div>
                         <form action="{{ route('comics.store')}}" method="POST" class="w-100 d-flex gap-3 flex-wrap">
                             @csrf
                             <div class="form-group width-2">
                                 <label for="">Titolo</label>
                                 <input type="text" name="title" class="form-control" placeholder="Inserisci il nome del comic ...">
+                                @error('title')
+                                    <div class="text-danger">
+                                        <p>{{ $message }}</p>
+                                    </div>
+                                @enderror
                             </div>
                             <div class="form-group width-2">
                                 <label for="">Thumb</label>
@@ -31,18 +47,38 @@
                             <div class="form-group width-2">
                                 <label for="">Series</label>
                                 <input type="text" name="series" class="form-control" placeholder="Inserisci la serie di appartenenza ...">
+                                @error('series')
+                                    <div class="text-danger">
+                                        <p>{{ $message }}</p>
+                                    </div>
+                                @enderror
                             </div>
                             <div class="form-group width-2">
                                 <label for="">Tipo</label>
                                 <input type="text" name="type" class="form-control" placeholder="Inserisci il tipo del comic ...">
+                                @error('type')
+                                    <div class="text-danger">
+                                        <p>{{ $message }}</p>
+                                    </div>
+                                @enderror
                             </div>
                             <div class="form-group width-2">
                                 <label for="">Data di uscita</label>
                                 <input type="date" name="sale_date" class="form-control" placeholder="Inserisci il tipo del comic ...">
+                                @error('sale_date')
+                                    <div class="text-danger">
+                                        <p>{{ $message }}</p>
+                                    </div>
+                                @enderror
                             </div>
                             <div class="form-group width-2">
                                 <label for="">Prezzo</label>
                                 <input type="number" name="price" class="form-control" placeholder="Inserisci il prezzo ...">
+                                @error('price')
+                                    <div class="text-danger">
+                                        <p>{{ $message }}</p>
+                                    </div>
+                                @enderror
                             </div>
                             <div class="form-group w-100">
                                 <label for="">Descrizione</label>
