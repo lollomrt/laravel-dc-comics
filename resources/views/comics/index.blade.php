@@ -6,18 +6,19 @@
             <span class="label-blue">Current series</span>
             <a class="assoluto" href="{{ route('comics.create')}}"><button class="btn btn-light border-button text-uppercase px-5">aggiungi nuovo comic</button></a>
             <div class="row d-flex gap-5 flex-column align-items-center">
-                <div class="col d-flex flex-wrap gap-1-rem w-100 {{--position-relative--}}">
+                <div class="col d-flex flex-wrap justify-content-start gap-1-rem w-100">
                     @foreach($comics as $comic)
-                    <a href="{{route('comics.show', ['comic' => $comic['id']])}}">
-                        <div class="card card-styled border-0 back-dark text-white">
+                    <a class="d-content" href="{{route('comics.show', ['comic' => $comic['id']])}}">
+                        <div class="card card-styled border-0 back-dark text-white position-relative">
                             <img src="{{ $comic['thumb']}}" alt="">
                             <h6 class="my-2">{{ $comic['title']}}</h6>
+                            <div class="d-flex flex-column gap-1 m-1 hover-btn position-absolute positioning">
+                                <a class="btn btn-sm btn-warning" href="#"><i class="fa-solid fa-pencil"></i></a>
+                                <a class="btn btn-sm btn-danger" href="#"><i class="fa-solid fa-trash-can"></i></a>
+                            </div>
                         </div>
                     </a>
-                    {{-- <div class="d-flex flex-column p-1 gap-1 hover-btn position-absolute">
-                        <a class="btn btn-sm btn-warning" href="#"><i class="fa-solid fa-pencil"></i></a>
-                        <a class="btn btn-sm btn-danger" href="#"><i class="fa-solid fa-trash-can"></i></a>
-                    </div> --}}
+                    
                     {{-- <a href="{{route('single-comic', ['slug' => $comic['slug']])}}">
                         
                     </a> --}}
