@@ -10,6 +10,13 @@
             </div>
             <div class="container-cta gap-3">
                 <a class="btn btn-sm btn-warning" href="{{ route('comics.edit', ['comic' => $single['id']])}}"><i class="fa-solid fa-pencil"></i></a>
+                <form class="d-inline-block" action="{{ route('comics.destroy', ['comic' => $single['id']])}}" method="POST">
+                    @csrf 
+                    @method('DELETE')
+                    <button class="btn btn-sm btn-danger" type="submit">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                </form>
                 <a href="{{ route('comics.index')}}"><button class="btn btn-dark text-uppercase px-4">torna alla lista dei comics</button></a>
             </div>
         </div>
