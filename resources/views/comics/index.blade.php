@@ -14,7 +14,13 @@
                             <h6 class="my-2">{{ $comic['title']}}</h6>
                             <div class="d-flex flex-column gap-1 m-1 hover-btn position-absolute positioning">
                                 <a class="btn btn-sm btn-warning" href="{{ route('comics.edit', ['comic' => $comic['id']])}}"><i class="fa-solid fa-pencil"></i></a>
-                                <a class="btn btn-sm btn-danger" href="#"><i class="fa-solid fa-trash-can"></i></a>
+                                <form action="{{ route('comics.destroy', ['comic' => $comic['id']])}}" method="POST">
+                                    @csrf 
+                                    @method('DELETE')
+                                    <button class="btn btn-sm btn-danger" type="submit">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </a>
