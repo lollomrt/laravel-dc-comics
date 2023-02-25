@@ -4,7 +4,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">ATTENZIONE!</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -12,7 +12,7 @@
             <p>Sei sicuro di voler eliminare il fumetto <strong><span id="modal-item-title"></span></strong>?</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-sucess" data-dismiss="modal">No ci ho ripensato</button>
+                <button type="button" class="btn btn-sucess" data-bs-dismiss="modal">No ci ho ripensato</button>
                 <button type="button" class="btn btn-danger" id="confirm-delete">Elimina Fumetto</button>
             </div>
         </div>
