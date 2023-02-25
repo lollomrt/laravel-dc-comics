@@ -42,13 +42,14 @@ class ComicController extends Controller
         // $form_data = $request->all();
 
         $newComic = new Comic();
-        $newComic -> title = $form_data['title'];
-        $newComic -> thumb = $form_data['thumb'];
-        $newComic -> series = $form_data['series'];
-        $newComic -> type = $form_data['type'];
-        $newComic -> sale_date = $form_data['sale_date'];
-        $newComic -> price = $form_data['price'];
-        $newComic -> description = $form_data['description'];
+        $newComic->fill($form_data);
+        // $newComic -> title = $form_data['title'];
+        // $newComic -> thumb = $form_data['thumb'];
+        // $newComic -> series = $form_data['series'];
+        // $newComic -> type = $form_data['type'];
+        // $newComic -> sale_date = $form_data['sale_date'];
+        // $newComic -> price = $form_data['price'];
+        // $newComic -> description = $form_data['description'];
 
         $newComic -> save();
 
@@ -78,7 +79,8 @@ class ComicController extends Controller
      */
     public function edit($id)
     {
-        //
+        $single = Comic::findOrFail($id);
+        return view('comics.edit', compact('single'));
     }
 
     /**
@@ -90,7 +92,22 @@ class ComicController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+        $single = Comic::findOrFail($id);
+        // $request->validate([
+        //     'title' => 'required|max:100',
+        //     'thumb' => 'nullable',
+        //     'series' => 'required|max:50',
+        //     'type' => 'required|max:30',
+        //     'sale_date' => 'required',
+        //     'price' => 'required',
+        //     'description' => 'nullable'
+        // ]);
+        // $form_data = $request->all();
+        $form_data = $this->validation($request->all());
+        $single->update($form_data);
+        return redirect()->route('comics.show' , ['comic' => $single->id]);
+
     }
 
     /**
@@ -126,6 +143,6 @@ class ComicController extends Controller
 
         ])->validate();
 
-        return Validator;
+        return $validator;
     }
 }

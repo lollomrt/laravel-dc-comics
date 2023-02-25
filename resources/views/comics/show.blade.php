@@ -8,7 +8,10 @@
                 <span class="lable">{{ $single['type'] }}</span>
                 <span class="gallery text-center"><a href="#">view gallery</a></span>
             </div>
-            <a href="{{ route('comics.index')}}"><button class="btn btn-dark text-uppercase px-4">torna alla lista dei comics</button></a>
+            <div class="container-cta gap-3">
+                <a class="btn btn-sm btn-warning" href="{{ route('comics.edit', ['comic' => $single['id']])}}"><i class="fa-solid fa-pencil"></i></a>
+                <a href="{{ route('comics.index')}}"><button class="btn btn-dark text-uppercase px-4">torna alla lista dei comics</button></a>
+            </div>
         </div>
     </div>
     <div class="container-fluid">
